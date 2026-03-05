@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "rag-proj"
+version = "0.1.0"
+description = "LangGraph GraphRAG Chatbot with Streamlit"
+authors = ["hskim"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+# LangChain core
+langchain = "0.*"
+langchain-core = "0.*"
+langchain-community = "0.*"
+langchain-text-splitters = "0.*"
+
+# LangGraph
+langgraph = "0.*"
+
+# LLM & Embeddings (HuggingFace)
+langchain-huggingface = "0.*"
+huggingface-hub = "0.*"
+
+# Vector Store
+langchain-chroma = "0.*"
+chromadb = "0.*"
+
+# Graph DB
+neo4j = "5.*"
+
+# PDF processing
+pymupdf = "1.*"
+
+# UI
+streamlit = "1.*"
+
+# Utilities
+python-dotenv = "1.*"
+pydantic = "2.*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
