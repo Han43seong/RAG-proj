@@ -44,7 +44,7 @@ LLM/Embedding 모델은 싱글턴(`src/models.py`)으로 관리해 반복 로딩
 - **한국어 특화 모델**: LLM `konantech/Konan-LLM-OND` (4B), 임베딩 `dragonkue/BGE-m3-ko` (0.6B)
 - **Streamlit 챗봇 UI**: 대화형 질의응답 대시보드 (`app.py`)
 - **CLI 인덱싱**: `ingest.py`로 폴더 또는 개별 PDF 일괄 처리
-- **LangSmith 트레이싱**: 파이프라인 노드별 실행 추적
+- **LangSmith 트레이싱** *(선택)*: LangChain 표준 env 변수 설정 시 노드별 실행 추적 활용 가능
 - **온디바이스 배포 전략**: PC에서 인덱싱·DB 생성 → 모바일(Galaxy S26 Ultra)에 DB + Q4 양자화 모델 이식, 모바일은 검색·추론만 수행
 
 ---
@@ -90,7 +90,7 @@ streamlit run app.py
 | Python | >=3.11, <3.13 |
 | Docker | Neo4j 컨테이너 실행 필요 |
 | HuggingFace 토큰 | `HUGGINGFACEHUB_API_TOKEN` (gated 모델 접근) |
-| LangSmith API Key | 트레이싱 선택사항 |
+| LangSmith (선택) | LangChain 표준 env 설정 시 트레이싱 |
 | 주요 패키지 | `langgraph`, `langchain`, `langchain-huggingface`, `chromadb`, `neo4j`, `pymupdf`, `streamlit` |
 | GPU | CUDA 권장 (CPU 추론 가능하나 느림) |
 
